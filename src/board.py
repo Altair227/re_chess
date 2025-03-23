@@ -1,3 +1,4 @@
+from .bishop import Bishop
 from .pawn import Pawn
 from .rook import Rook
 from .colors import BlackColor, WhiteColor
@@ -14,6 +15,9 @@ class Board:
         for col in [0, 7]:
             self.__board[0][col] = Rook(WhiteColor())
             self.__board[7][col] = Rook(BlackColor())
+        for col in [2, 5]:
+            self.__board[0][col] = Bishop(WhiteColor())
+            self.__board[7][col] = Bishop(BlackColor())
 
     @property
     def color(self) -> BlackColor | WhiteColor:
