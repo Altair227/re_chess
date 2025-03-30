@@ -24,6 +24,7 @@ def print_board(board: Board):
         # print(f' {col}   ', end='')
     print()
 
+
 def print_menu():
     print('exit                       - Выход')
     print('<col><row> <col><row> - движение фигуры')

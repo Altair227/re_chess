@@ -2,6 +2,10 @@ from .bishop import Bishop
 from .pawn import Pawn
 from .rook import Rook
 from .colors import BlackColor, WhiteColor
+from .king import King
+from .queen import Queen
+from .knight import Knight
+
 
 class Board:
     def __init__(self):
@@ -18,6 +22,13 @@ class Board:
         for col in [2, 5]:
             self.__board[0][col] = Bishop(WhiteColor())
             self.__board[7][col] = Bishop(BlackColor())
+        for col in [1, 6]:
+            self.__board[0][col] = Knight(WhiteColor())
+            self.__board[7][col] = Knight(BlackColor())
+        self.__board[0][4] = King(WhiteColor())
+        self.__board[7][4] = King(BlackColor())
+        self.__board[0][3] = Queen(WhiteColor())
+        self.__board[7][3] = Queen(BlackColor())
 
     @property
     def color(self) -> BlackColor | WhiteColor:
