@@ -1,13 +1,7 @@
-from .figure import Figure
+from figure import Figure
 
 
 class Queen(Figure):
-    @property
-    def char(self) -> str:
-        if self.color.is_white():
-            return 'wQ'
-        return 'bQ'
-
     def can_move(self,
                  board,
                  from_row: int,
@@ -36,4 +30,3 @@ class Queen(Figure):
             row += row_step
             col += col_step
         return True
-

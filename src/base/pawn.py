@@ -1,13 +1,7 @@
-from .figure import Figure
+from figure import Figure
 
 
 class Pawn(Figure):
-    @property
-    def char(self) -> str:
-        if self.color.is_white():
-            return 'wP'
-        return 'bP'
-
     def can_move(self,
                  board,
                  from_row: int,
@@ -32,12 +26,12 @@ class Pawn(Figure):
         return True
 
     def can_attack(self,
-                 board,
-                 from_row: int,
-                 from_col: int,
-                 to_row: int,
-                 to_col: int
-                 ) -> bool:
+                   board,
+                   from_row: int,
+                   from_col: int,
+                   to_row: int,
+                   to_col: int
+                   ) -> bool:
         if abs(from_col - to_col) != 1:
             return False
         if self.color.is_white():

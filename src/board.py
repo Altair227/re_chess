@@ -1,10 +1,10 @@
-from .bishop import Bishop
-from .pawn import Pawn
-from .rook import Rook
-from .colors import BlackColor, WhiteColor
-from .king import King
-from .queen import Queen
-from .knight import Knight
+from console.bishop import Bishop
+from console.pawn import Pawn
+from console.rook import Rook
+from src.base.colors import BlackColor, WhiteColor
+from src.console.king import King
+from src.console.queen import Queen
+from src.console.knight import Knight
 
 
 class Board:

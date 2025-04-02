@@ -1,13 +1,7 @@
-from .figure import Figure
+from figure import Figure
 
 
-class Knight(Figure):
-    @property
-    def char(self) -> str:
-        if self.color.is_white():
-            return 'wN'
-        return 'bN'
-
+class King(Figure):
     def can_move(self,
                  board,
                  from_row: int,
@@ -15,8 +9,8 @@ class Knight(Figure):
                  to_row: int,
                  to_col: int
                  ) -> bool:
-
         row_diff = abs(to_row - from_row)
         col_diff = abs(to_col - from_col)
-
-        return row_diff == 2 and col_diff == 1 or row_diff == 1 and col_diff == 2
+        if row_diff <= 1 and col_diff <= 1:
+            return True
+        return False
